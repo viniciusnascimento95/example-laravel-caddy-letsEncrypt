@@ -117,6 +117,7 @@ services:
         - "${WORKSPACE_VUE_CLI_UI_HOST_PORT}:8000"
       tty: true
       environment:
+        - TZ=America/Porto_Velho
         - PHP_IDE_CONFIG=${PHP_IDE_CONFIG}
         - DOCKER_HOST=tcp://docker-in-docker:2376
         - DOCKER_TLS_VERIFY=1
@@ -218,6 +219,7 @@ services:
       extra_hosts:
         - "dockerhost:${DOCKER_HOST_IP}"
       environment:
+        - TZ=America/Porto_Velho
         - PHP_IDE_CONFIG=${PHP_IDE_CONFIG}
         - DOCKER_HOST=tcp://docker-in-docker:2376
         - DOCKER_TLS_VERIFY=1
@@ -232,31 +234,31 @@ services:
         - docker-in-docker
 
 
-### NGINX Server #########################################
-    nginx:
-      build:
-        context: ./nginx
-        args:
-          - CHANGE_SOURCE=${CHANGE_SOURCE}
-          - PHP_UPSTREAM_CONTAINER=${NGINX_PHP_UPSTREAM_CONTAINER}
-          - PHP_UPSTREAM_PORT=${NGINX_PHP_UPSTREAM_PORT}
-          - http_proxy
-          - https_proxy
-          - no_proxy
-      volumes:
-        - ${APP_CODE_PATH_HOST}:${APP_CODE_PATH_CONTAINER}${APP_CODE_CONTAINER_FLAG}
-        - ${NGINX_HOST_LOG_PATH}:/var/log/nginx
-        - ${NGINX_SITES_PATH}:/etc/nginx/sites-available
-        - ${NGINX_SSL_PATH}:/etc/nginx/ssl
-      ports:
-        - "${NGINX_HOST_HTTP_PORT}:80"
-        - "${NGINX_HOST_HTTPS_PORT}:443"
-        - "${VARNISH_BACKEND_PORT}:81"
-      depends_on:
-        - php-fpm
-      networks:
-        - frontend
-        - backend
+# ### NGINX Server #########################################
+#     nginx:
+#       build:
+#         context: ./nginx
+#         args:
+#           - CHANGE_SOURCE=${CHANGE_SOURCE}
+#           - PHP_UPSTREAM_CONTAINER=${NGINX_PHP_UPSTREAM_CONTAINER}
+#           - PHP_UPSTREAM_PORT=${NGINX_PHP_UPSTREAM_PORT}
+#           - http_proxy
+#           - https_proxy
+#           - no_proxy
+#       volumes:
+#         - ${APP_CODE_PATH_HOST}:${APP_CODE_PATH_CONTAINER}${APP_CODE_CONTAINER_FLAG}
+#         - ${NGINX_HOST_LOG_PATH}:/var/log/nginx
+#         - ${NGINX_SITES_PATH}:/etc/nginx/sites-available
+#         - ${NGINX_SSL_PATH}:/etc/nginx/ssl
+#       ports:
+#         - "${NGINX_HOST_HTTP_PORT}:80"
+#         - "${NGINX_HOST_HTTPS_PORT}:443"
+#         - "${VARNISH_BACKEND_PORT}:81"
+#       depends_on:
+#         - php-fpm
+#       networks:
+#         - frontend
+#         - backend
 
 
 ### HHVM #################################################
@@ -280,6 +282,8 @@ services:
         - ${CADDY_CONFIG_PATH}:/etc/caddy
         - ${CADDY_HOST_LOG_PATH}:/var/log/caddy
         - ${DATA_PATH_HOST}:/root/.caddy
+      environment:
+        - TZ=America/Porto_Velho
       ports:
         - "${CADDY_HOST_HTTP_PORT}:80"
         - "${CADDY_HOST_HTTPS_PORT}:443"
@@ -297,6 +301,7 @@ services:
         - ./data/certbot/certs/:/var/certs
         - ./certbot/letsencrypt/:/var/www/letsencrypt
       environment:
+        - TZ=America/Porto_Velho
         - CN="fake.domain.com"
         - EMAIL="fake.email@gmail.com"
       networks:
