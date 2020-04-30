@@ -27,9 +27,9 @@ git clone https://your-repository.git
 ## View directory
 
   .web/
-    ├── example-laravel-caddy-letsEncrypt/
-    ├── your_application/
-    
+    ├── example-laravel-caddy-letsEncrypt/                    # Documentation files (alternatively `doc`)
+    ├── your_application/                    # Documentation application (alternatively `doc`)
+
 ## Open directory
 
 ```shell
