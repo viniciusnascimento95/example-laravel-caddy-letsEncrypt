@@ -26,10 +26,10 @@ git clone https://your-repository.git
 
 ## View directory
 
-  web/
-    example-laravel-caddy-letsEncrypt/
-    your_application/
-
+  .web/
+    ├── example-laravel-caddy-letsEncrypt/
+    ├── your_application/
+    
 ## Open directory
 
 ```shell
