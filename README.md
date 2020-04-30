@@ -7,7 +7,7 @@
 mkdir web
 ```
 
-## open directory
+## Open directory and clone project here
 
 ```shell
 cd web
