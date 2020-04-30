@@ -24,12 +24,6 @@ git clone https://github.com/viniciusnascimento95/example-laravel-caddy-letsEncr
 git clone https://your-repository.git 
 ```
 
-## View directory
-
-  .web/
-  ├── example-laravel-caddy-letsEncrypt/                    # Documentation files (alternatively `doc`)
-  ├── your_application/                    # Documentation application (alternatively `doc`)
-
 ## Open directory
 
 ```shell
