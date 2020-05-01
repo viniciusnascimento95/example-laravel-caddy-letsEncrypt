@@ -16,5 +16,6 @@
 /.devcontainer/*
 !/.devcontainer/devcontainer.example.json
 !/.devcontainer/docker-compose.extend-example.yml
+caddy/caddy/Caddyfile
 
 .DS_Store
