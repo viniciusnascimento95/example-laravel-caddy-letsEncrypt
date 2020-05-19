@@ -149,6 +149,11 @@ services:
     php-fpm:
       build:
         context: ./php-fpm
+        environment:
+          PHP__memory_limit:   '512M'
+          PHP__post_max_size:  '120M'
+          PHP__upload_max_filesize: '120M'
+          PHP__date.timezone:  '"America/Porto_Velho"'
         args:
           - CHANGE_SOURCE=${CHANGE_SOURCE}
           - LARADOCK_PHP_VERSION=${PHP_VERSION}
