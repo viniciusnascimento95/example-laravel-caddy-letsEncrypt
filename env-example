@@ -275,3 +275,18 @@ CADDY_HOST_HTTPS_PORT=443
 CADDY_HOST_LOG_PATH=./logs/caddy
 CADDY_CONFIG_PATH=./caddy/caddy
 
+### REDIS #################################################
+
+REDIS_PORT=6379
+
+### REDIS CLUSTER #########################################
+
+REDIS_CLUSTER_PORT_RANGE=7000-7005
+
+### REDISWEBUI #########################################
+REDIS_WEBUI_USERNAME=laradock
+REDIS_WEBUI_PASSWORD=laradock
+REDIS_WEBUI_CONNECT_HOST=redis
+REDIS_WEBUI_CONNECT_PORT=6379
+REDIS_WEBUI_PORT=9987
+
