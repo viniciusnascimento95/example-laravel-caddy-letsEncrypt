@@ -275,6 +275,10 @@ CADDY_HOST_HTTPS_PORT=443
 CADDY_HOST_LOG_PATH=./logs/caddy
 CADDY_CONFIG_PATH=./caddy/caddy
 
+### LARAVEL ECHO SERVER ###################################
+
+LARAVEL_ECHO_SERVER_PORT=6001
+
 ### REDIS #################################################
 
 REDIS_PORT=6379
