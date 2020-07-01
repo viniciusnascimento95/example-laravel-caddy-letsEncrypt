@@ -14,6 +14,6 @@
 	"port": "6001",
 	"protocol": "http",
 	"socketio": {},
-	"sslCertPath": "",
-	"sslKeyPath": ""
+	"sslCertPath": "/storage/certs/cert.pem",
+	"sslKeyPath": "/storage/certs/key.pem"
 }
