@@ -253,7 +253,8 @@ services:
         context: ./laravel-echo-server
       volumes:
         - ./laravel-echo-server/laravel-echo-server.json:/app/laravel-echo-server.json:ro
-        - ${STORAGE}:/storage
+      volumes_from:
+        - caddy:ro
       ports:
         - "${LARAVEL_ECHO_SERVER_PORT}:6001"
       links:

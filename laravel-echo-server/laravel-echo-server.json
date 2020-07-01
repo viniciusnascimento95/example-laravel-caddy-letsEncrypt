@@ -14,6 +14,6 @@
 	"port": "6001",
 	"protocol": "http",
 	"socketio": {},
-	"sslCertPath": "/storage/certs/cert.pem",
-	"sslKeyPath": "/storage/certs/key.pem"
+	"sslCertPath": "/root/.caddy/acme/acme-v01.api.letsencrypt.org/sites/<caddy-registered.domain.name>/<caddy-registered.domain.name>.crt",
+	"sslKeyPath": "/root/.caddy/acme/acme-v01.api.letsencrypt.org/sites/<caddy-registered.domain.name>/<caddy-registered.domain.name>.key"
 }
